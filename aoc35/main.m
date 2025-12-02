@@ -6,11 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "day1.h"
+ 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
+        [Day1 solve];
     }
     return EXIT_SUCCESS;
 }
