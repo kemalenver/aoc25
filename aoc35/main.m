@@ -8,7 +8,8 @@
  
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [Day1 solve];
+        [Day1 part1];
+        [Day1 part2];
     }
     return EXIT_SUCCESS;
 }

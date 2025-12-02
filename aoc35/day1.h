@@ -5,6 +5,8 @@
 
 @interface Day1 : NSObject
 
-+ (void)solve;
++ (void)part1;
+
++ (void)part2;
 
 @end
