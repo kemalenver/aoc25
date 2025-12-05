@@ -7,6 +7,7 @@
 #import "day1.h"
 #import "day2.h"
 #import "day3.h"
+#import "day4.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -14,7 +15,10 @@ int main(int argc, const char * argv[]) {
 //        [Day1 part2];
 //        [Day2 part1];
 //        [Day2 part2];
-        [Day3 part1];
+//        [Day3 part1];
+        //        [Day3 part2];
+        [Day4 part1];
+        [Day4 part2];
     }
     return EXIT_SUCCESS;
 }
