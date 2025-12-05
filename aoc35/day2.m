@@ -49,14 +49,51 @@
 }
 
 
-// Test input = 6
+// Test input = 4174379265
 + (void)part2 {
     // Not sure my part 1 is going to help here. Regex?
 
     NSLog(@"Solving Day 1 Part 2");
     NSArray *inputs = [Day2 readInput];
 
-  
+    long total = 0;
+
+    for (NSArray *range in inputs) {
+        long start = [range[0] longValue];
+        long end = [range[1] longValue];
+
+        for (long n = start; n <= end; n++)
+        {
+            NSString *current = [NSString stringWithFormat:@"%ld", n];
+            long idLength = current.length;
+            for (int segLength=1; segLength * 2 <= idLength; segLength++) {
+
+                if (idLength % segLength != 0) { // Odd digits can't have a repeat?
+                    continue;
+                }
+
+                bool isRepeating = true;
+
+                NSString *firstSeg = [current substringToIndex: segLength];
+
+                for (int pos = segLength; pos < idLength && isRepeating; pos += segLength) {
+
+                    NSRange range = NSMakeRange(pos, segLength);
+                    NSString *compSeg = [current substringWithRange: range];
+                    isRepeating = [firstSeg isEqualToString: compSeg];
+                }
+
+                if (isRepeating) {
+                    total += n;
+                    break;
+                }
+
+            }
+        }
+    }
+
+    NSLog(@"Count %ld", total);
+
 }
 
 + (NSArray *) readInput {
